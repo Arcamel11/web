@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostureUp - Sobre Nosotros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="fontawesome/css/all.min.css"> 
+    <link rel="stylesheet" href="css/templatemo-ocean-vibes.css"> 
+    <link rel="stylesheet" href="css/about.css"> 
+    </head>
+<body>
+
+<header class="tm-site-header">
+    <img src="img/Logo.jpg" style="margin-left: 20px; height: 60px;">
+    <nav class="top-navbar">
+        <ul class="top-nav-list">
+            <li><a href="index.html" class="top-nav-link">Inicio</a></li>
+            <li><a href="app.html" class="top-nav-link">App</a></li>
+            <li><a href="about.html" class="top-nav-link">Sobre Nosotros</a></li>
+            <li><a href="contact.html" class="top-nav-link">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="tm-container tm-bg-gray" style="padding: 40px 20px;">
+    <h2 class="tm-color-primary tm-page-title">Sobre Nosotros</h2>
+    
+    <div class="tm-col">
+        <p class="tm-mb-30">
+            Somos estudiantes de distintas carreras profesionales de la <strong>Universidad Privada del Norte (UPN)</strong>, unidos por una misma visión: desarrollar una solución tecnológica que mejore la calidad de vida de las personas.
+        </p>
+        <p class="tm-mb-30">
+            <strong>PostureUp</strong> nació como un proyecto universitario interdisciplinario y evolucionó rápidamente gracias al esfuerzo conjunto y al acompañamiento de nuestros asesores académicos. 
+        </p>
+        <p class="tm-mb-30">
+            Fuimos reconocidos como ganadores en un concurso interno de innovación en la universidad, lo que nos motivó a seguir desarrollando esta herramienta con enfoque en salud, tecnología y bienestar laboral.
+        </p>
+        <p class="tm-mb-30">
+            Estamos convencidos de que la tecnología debe estar al servicio de las personas. Este proyecto representa nuestro compromiso con una sociedad más saludable, ergonómica y consciente de su bienestar diario.
+        </p>
+    </div>
+
+    <div class="carousel-container">
+        <div class="carousel-slide" id="carousel-slide">
+            <img src="img/ganadores.png" alt="Ganadores">
+            <img src="img/noti.png" alt="Noticia">
+            <img src="img/todos.png" alt="Todo el equipo">
+        </div>
+        <div class="carousel-buttons">
+            <button id="prevBtn">&#10094;</button>
+            <button id="nextBtn">&#10095;</button>
+        </div>
+    </div>
+</main>
+
+<footer class="tm-footer">
+    <span>&copy; 2025 PostureUp</span>
+</footer>
+
+<script>
+    const slide = document.getElementById("carousel-slide");
+    const images = slide.querySelectorAll("img");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    let counter = 0;
+
+    function updateCarousel() {
+        slide.style.transform = `translateX(-${counter * 100}%)`;
+    }
+
+    nextBtn.addEventListener("click", () => {
+        counter = (counter + 1) % images.length;
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener("click", () => {
+        counter = (counter - 1 + images.length) % images.length;
+        updateCarousel();
+    });
+</script>
+
+</body>
+</html>
